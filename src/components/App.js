@@ -1,9 +1,9 @@
 // import logo from '../logo.svg';
 import '../App.css';
-import Navbar from './Navbar';
-import Form from './Form';
+// import Navbar from './Navbar';
+// import Form from './Form';
 import Activities from './Activities';
-import RandomButton from './RandomButton';
+// import RandomButton from './RandomButton';
 import {useEffect,useState} from 'react';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
  
 
   useEffect(()=> {
-    fetch('http://localhost:3000/')
+    fetch('http://localhost:8000/activities')
       .then((r)=> r.json())
       .then((kidActivitiesArray)=> {
         setKidActivityData(kidActivitiesArray)
@@ -21,10 +21,10 @@ function App() {
 
   return (
     <div>
-      <Navbar/>
-      <Form/>
+      {/* <Navbar/> */}
+      {/* <Form/> */}
       <Activities activities = {KidActivityData} />
-      <RandomButton/>
+      {/* <RandomButton/> */}
     </div>
   );
 }
