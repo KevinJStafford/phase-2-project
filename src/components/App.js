@@ -3,7 +3,7 @@ import '../App.css';
 // import Navbar from './Navbar';
 // import Form from './Form';
 import Activities from './Activities';
-// import RandomButton from './RandomButton';
+import RandomButton from './RandomButton';
 import {useEffect,useState} from 'react';
 
 function App() {
@@ -18,13 +18,12 @@ function App() {
       });
   }, []);
 
-
   return (
     <div>
       {/* <Navbar/> */}
       {/* <Form/> */}
       <Activities activities = {KidActivityData} />
-      {/* <RandomButton/> */}
+      <RandomButton  />
     </div>
   );
 }
