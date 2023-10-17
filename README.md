@@ -1,7 +1,7 @@
 # Family Fun Helper
 Welcome to Family Fun Helper. The application that helps families answer the question "What the heck do I do with my kid(s)?". Family Fun Helper suggests age appropriate, kid friendly activities to help fill weekends, evenings, holidays, and school vacations. Family Fun Helper allows the user to search for activities by keywords, sort activities by age appropriateness, location(indoor or outdoor), or cost(free or paid). Users can upload new activites for familiest to view, and use a randomizer function to have a fun activity presented to them.
 
-This is a project for Flatiron School Software Engineer course, phase 2. This applicaiton was built by [Kassidy Matos](https://github.com/kassinovaa) & [Kevin J Stafford](https://github.com/kevinjstafford)
+This is a project for Flatiron School Software Engineer course, phase 2. This applicaiton was built by [Kassidy Puello](https://github.com/kassinovaa) & [Kevin J Stafford](https://github.com/kevinjstafford)
 
 ### Project Requirements
 
