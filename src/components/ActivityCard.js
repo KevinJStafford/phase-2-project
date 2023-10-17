@@ -1,11 +1,12 @@
 import {useState} from "react";
 
 function ActivityCard({oneActivity}) {
-  const { name,image,description,ageRange,outside } = oneActivity;
+  const { name,image,description,ageRange,outdoor, free } = oneActivity;
   const [ showDetails, setShowDetails ] = useState(true)
   
-  const baseLocation = outside === true ? 'Outdoor Activity' : 'Indoor Actvity';
-  const details = (ageRange)
+  const baseLocation = outdoor === true ? 'Outdoor Activity' : 'Indoor Actvity';
+  const Fee = free === true ? 'Free Activity' : 'Actvity price will vary'
+//   const details = (ageRange,baseLocation)
   
   
   const toggleDetails = ()=>{
@@ -22,14 +23,9 @@ function ActivityCard({oneActivity}) {
         />
         <div className="card__content">
           <div className="card__title">{name}</div>
-          <div className="card__text">{showDetails ? <p >{description}</p> : <p>{details}</p> }</div>
+          <div className="card__text">{showDetails ? <p >{description}</p> : <p>Recommended Age Range: {ageRange}<p>{Fee}</p>{baseLocation}</p> }</div>
           <div className="card__detail">
-            <p>{name}</p>
-            <p>
-              {
-                baseLocation
-              }
-            </p>
+            {/* <p>{baseLocation}</p> */}
           </div>
         </div>
       </div>
