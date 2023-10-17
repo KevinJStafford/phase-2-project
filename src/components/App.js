@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 // import Navbar from './Navbar';
 // import Form from './Form';
 // import Activities from './Activities';
