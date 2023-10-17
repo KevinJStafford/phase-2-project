@@ -1,16 +1,29 @@
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
 import '../App.css';
 import Navbar from './Navbar';
 import Form from './Form';
 import Activities from './Activities';
 import RandomButton from './RandomButton';
+import {useEffect,useState} from 'react';
 
 function App() {
+  const [ KidActivityData, setKidActivityData ] = useState([])
+ 
+
+  useEffect(()=> {
+    fetch('http://localhost:3000/')
+      .then((r)=> r.json())
+      .then((kidActivitiesArray)=> {
+        setKidActivityData(kidActivitiesArray)
+      });
+  }, []);
+
+
   return (
     <div>
       <Navbar/>
       <Form/>
-      <Activities/>
+      <Activities activities = {KidActivityData} />
       <RandomButton/>
     </div>
   );

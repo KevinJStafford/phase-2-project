@@ -5,7 +5,7 @@ function ActivityCard({oneActivity}) {
   const [ showDetails, setShowDetails ] = useState(true)
   
   const baseLocation = outside === true ? 'Outdoor Activity' : 'Indoor Actvity';
-  const details = (ageRange,price)
+  const details = (ageRange)
   
   
   const toggleDetails = ()=>{
