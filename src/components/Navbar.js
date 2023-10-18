@@ -1,12 +1,17 @@
 import Searchbar from "./Searchbar";
 import FilterToggle from "./FilterToggle";
 
-function Navbar() {
+function Navbar({handleSearchChange}) {
 
     return (
-        <div>
-            <Searchbar />
-            <FilterToggle />
+        <div class="ui grid container">
+        <div class="ui four column grid container" className="nav-area">
+            <Searchbar class="column" className="column" handleSearchChange={handleSearchChange} />
+            <FilterToggle class="column" />
+            <button>Activities</button>
+            <button>Randomizer</button>
+            <button>Add Activity!</button>
+        </div>
         </div>
     )
 }

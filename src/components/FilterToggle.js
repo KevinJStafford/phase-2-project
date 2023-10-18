@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 function FilterToggle() {
     const [open, setOpen] = useState(false)
+    const [isAgeClicked, setIsAgeClicked] = useState(false)
 
     const useOutsideClick = (callback) => {
         const ref = React.useRef();
@@ -32,16 +33,48 @@ function FilterToggle() {
     }
     const ref = useOutsideClick(handleClickOutside)
 
+    const handleIsAgeClick = () => {
+        setIsAgeClicked(!isAgeClicked)
+    }
+
+    const handleSelection = () => {
+        setOpen(false)
+        setIsAgeClicked(false)
+    }
+
 
     return (
         <div ref={ref}>
             <button onClick={handleOpen}>Filter</button>
             {open ? ( <ul className="menu">
                         <li className="menu-item">
-                          <button>Age</button>
+                          <button onClick={handleIsAgeClick}>Age</button>
+                          {isAgeClicked ? (<ul>
+                            <li className="menu-item">
+                                <button onClick={handleSelection}>Under 1</button>
+                                </li>
+                            <li className="menu-item">
+                                <button onClick={handleSelection}>Under 3</button>
+                            </li>
+                            <li className="menu-item">
+                                <button onClick={handleSelection}>Under 5</button>
+                            </li>
+                            <li className="menu-item">
+                                <button onClick={handleSelection}>Under 7</button>
+                            </li>
+                            <li className="menu-item">
+                                <button onClick={handleSelection}>All Ages</button>
+                            </li>
+                          </ul>) : null}
                         </li>
                         <li className="menu-item">
-                          <button>Location</button>
+                          <button>Outdoor</button>
+                        </li>
+                        <li className="menu-item">
+                          <button>Indoor</button>
+                        </li>
+                        <li className="menu-item">
+                          <button>Cost</button>
                         </li>
                       </ul>
             ) : null }
