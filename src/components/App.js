@@ -1,7 +1,7 @@
 // import logo from '../logo.svg';
 import '../App.css';
 import Navbar from './Navbar';
-// import Form from './Form';
+import ActivityForm from './ActivityForm';
 import Activities from './Activities';
 import RandomButton from './RandomButton';
 import {useEffect,useState} from 'react';
@@ -31,10 +31,14 @@ function App() {
     return lowerCaseActivityName.includes(lowerCaseSearch) || lowerCaseActivityDescription.includes(lowerCaseSearch);
   })
 
+  function onNewActivity(newActivity){
+    setKidActivityData((currentActivities)=>[...currentActivities,newActivity])
+  }
+
   return (
     <div>
       <Navbar handleSearchChange={handleSearchChange}/>
-      {/* <Form/> */}
+      <ActivityForm onNewActivity = {onNewActivity} />
       <Activities activities = {filteredKidActivityData} />
       <RandomButton  />
     </div>
