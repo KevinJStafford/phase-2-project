@@ -1,6 +1,6 @@
 // import logo from '../logo.svg';
 import '../App.css';
-// import Navbar from './Navbar';
+import Navbar from './Navbar';
 // import Form from './Form';
 import Activities from './Activities';
 import RandomButton from './RandomButton';
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div>
-      {/* <Navbar/> */}
+      <Navbar/>
       {/* <Form/> */}
       <Activities activities = {KidActivityData} />
       <RandomButton  />
