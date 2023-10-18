@@ -1,5 +1,5 @@
 function DefaultChild() {
-    return <div>Welcome to Fammily Fun Helper</div>
+    return <div><h1>Welcome to Family Fun Helper!</h1></div>
 }
 
 export default DefaultChild;

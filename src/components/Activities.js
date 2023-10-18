@@ -1,7 +1,9 @@
+import {useOutletContext} from "react-router-dom";
 import ActivityCard from "./ActivityCard";
 
-function Activities({activities}){
-const aComponents = activities.map((activityobj)=>(
+function Activities(){
+  const {activities} = useOutletContext();
+  const aComponents = activities.map((activityobj)=>(
     <ActivityCard key = {activityobj.id} oneActivity = {activityobj}/>
 ));
 
@@ -13,20 +15,5 @@ const aComponents = activities.map((activityobj)=>(
         </ul>
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default Activities;

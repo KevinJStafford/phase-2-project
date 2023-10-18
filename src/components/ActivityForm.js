@@ -1,13 +1,16 @@
 import {useState} from "react";
 import { Form } from "semantic-ui-react";
+import {useOutletContext, useNavigate} from 'react-router-dom'
 
-function ActivityForm({onNewActivity}){
+function ActivityForm(){
+    const {onNewActivity} = useOutletContext()
     const [ newName , setNewName ] = useState('')
     const [ newImage , setNewImage ] = useState('')
     const [ newDescription, setNewDescription ] = useState('')
     const [ newAgeRange , setNewAgeRange ] = useState('')
     const [ newOutdoor , setNewOutdoor ] = useState('')
     const [ newFree , setNewFree ] = useState('')
+    const navigate = useNavigate()
 
     const handleName = (e) => {
         setNewName(e.target.value);

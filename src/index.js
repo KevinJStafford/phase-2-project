@@ -5,6 +5,35 @@ import 'semantic-ui-css/semantic.min.css'
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
+import DefaultChild from './components/DefaultChild';
+import ActivityForm from './components/ActivityForm';
+import RandomButton from './components/RandomButton';
+import Activities from './components/Activities';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+
+const routes = [
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <div>Error in app. Whoops!</div>,
+    children: [
+      {index: true, element: <DefaultChild />},
+      {path: '/activities',
+       element: <Activities />,
+      },
+      {
+        path: '/activities/from',
+        element: <ActivityForm />,
+      },
+      {
+        path: '/activites/random',
+        element: <RandomButton />,
+      },
+    ],
+  },
+];
+
+const router = createBrowserRouter(routes);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

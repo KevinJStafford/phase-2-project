@@ -4,7 +4,9 @@ import Navbar from './Navbar';
 import ActivityForm from './ActivityForm';
 import Activities from './Activities';
 import RandomButton from './RandomButton';
+import DefaultChild from './DefaultChild';
 import {useEffect,useState} from 'react';
+import {Outlet} from 'react-router-dom';
 
 function App() {
   const [ KidActivityData, setKidActivityData ] = useState([])
@@ -35,12 +37,19 @@ function App() {
     setKidActivityData((currentActivities)=>[...currentActivities,newActivity])
   }
 
+  const context = {
+    onNewActivity,
+    activities: filteredKidActivityData,
+  }
+
   return (
     <div>
       <Navbar handleSearchChange={handleSearchChange}/>
-      <ActivityForm onNewActivity = {onNewActivity} />
+      <DefaultChild />
+      {/* <ActivityForm onNewActivity = {onNewActivity} />
       <Activities activities = {filteredKidActivityData} />
-      <RandomButton  />
+      <RandomButton  /> */}
+      <Outlet context={context} />
     </div>
   );
 }
