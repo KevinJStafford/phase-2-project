@@ -39,6 +39,7 @@ function FilterToggle() {
 
     const handleSelection = () => {
         setOpen(false)
+        setIsAgeClicked(false)
     }
 
 
