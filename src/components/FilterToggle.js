@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
+
 function FilterToggle() {
     const [open, setOpen] = useState(false)
     const [isAgeClicked, setIsAgeClicked] = useState(false)
