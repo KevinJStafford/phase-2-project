@@ -8,6 +8,7 @@ import {useEffect,useState} from 'react';
 
 function App() {
   const [ KidActivityData, setKidActivityData ] = useState([])
+  const [search, setSearch] = useState('')
  
 
   useEffect(()=> {
@@ -18,11 +19,23 @@ function App() {
       });
   }, []);
 
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value)
+  }
+
+  const filteredKidActivityData = KidActivityData.filter((activity) => {
+    const lowerCaseActivityName = activity.name.toLowerCase()
+    const lowerCaseActivityDescription = activity.description.toLowerCase()
+    const lowerCaseSearch = search.toLowerCase()
+
+    return lowerCaseActivityName.includes(lowerCaseSearch) || lowerCaseActivityDescription.includes(lowerCaseSearch);
+  })
+
   return (
     <div>
-      <Navbar/>
+      <Navbar handleSearchChange={handleSearchChange}/>
       {/* <Form/> */}
-      <Activities activities = {KidActivityData} />
+      <Activities activities = {filteredKidActivityData} />
       <RandomButton  />
     </div>
   );

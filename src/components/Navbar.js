@@ -1,11 +1,11 @@
 import Searchbar from "./Searchbar";
 import FilterToggle from "./FilterToggle";
 
-function Navbar() {
+function Navbar({handleSearchChange}) {
 
     return (
-        <div>
-            <Searchbar />
+        <div className="nav-area">
+            <Searchbar handleSearchChange={handleSearchChange} />
             <FilterToggle />
         </div>
     )
