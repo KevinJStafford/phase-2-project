@@ -1,7 +1,7 @@
 // import logo from '../logo.svg';
 import '../App.css';
 import Navbar from './Navbar';
-// import Form from './Form';
+import ActivityForm from './ActivityForm';
 import Activities from './Activities';
 import RandomButton from './RandomButton';
 import {useEffect,useState} from 'react';
@@ -18,10 +18,14 @@ function App() {
       });
   }, []);
 
+  function onNewActivity(newActivity){
+    setKidActivityData((currentActivities)=>[...currentActivities,newActivity])
+  }
+
   return (
     <div>
       <Navbar/>
-      {/* <Form/> */}
+      <ActivityForm onNewActivity = {onNewActivity} />
       <Activities activities = {KidActivityData} />
       <RandomButton  />
     </div>
