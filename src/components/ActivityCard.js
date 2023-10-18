@@ -23,7 +23,7 @@ function ActivityCard({oneActivity}) {
         />
         <div className="card__content">
           <div className="card__title">{name}</div>
-          <div className="card__text">{showDetails ? <p >{description}</p> : <p>Recommended Age Range: {ageRange}<p>{Fee}</p>{baseLocation}</p> }</div>
+          <div className="card__text">{showDetails ? <p >{description}</p> : <p>{ageRange}<p>{Fee}</p>{baseLocation}</p> }</div>
           <div className="card__detail">
             {/* <p>{baseLocation}</p> */}
           </div>

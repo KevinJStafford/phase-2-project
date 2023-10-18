@@ -6,8 +6,8 @@ function ActivityForm({onNewActivity}){
     const [ newImage , setNewImage ] = useState('')
     const [ newDescription, setNewDescription ] = useState('')
     const [ newAgeRange , setNewAgeRange ] = useState('')
-    const [ newOutdoor , setNewOutdoor ] = useState(false)
-    const [ newFree , setNewFree ] = useState(false)
+    const [ newOutdoor , setNewOutdoor ] = useState('')
+    const [ newFree , setNewFree ] = useState('')
 
     const handleName = (e) => {
         setNewName(e.target.value);
@@ -21,33 +21,31 @@ function ActivityForm({onNewActivity}){
         setNewDescription(e.target.value);
       };
     
-      const handleAgeRange = (e) => {
-        setNewAgeRange(e.target.value);
+      const handleAgeRange = (e, {value} ) => {
+        setNewAgeRange(value);
       };
 
       const ageOptions = [
         { key: '1', text: '1 and under', value: '1 and under' },
+        { key: '1.0', text: '1 and over', value: '1 and over' },
         { key: '3', text: '3 and under', value: '3 and under' },
-        { key: '5', text: '5 and over', value: '5 and over' },
+        { key: '3.0', text: '3 and over', value: '3 and over' },
+        { key: '5', text: '5 and over', value: '5 and over'},
         { key: '10', text: '10 and over', value: '10 and over'},
         { key: 'all', text: 'all ages', value: 'all ages'}
       ]
       
-      const handleOutdoor = (e) => {
-        const selectedValue = e.target.value;
-        const isOutdoor = selectedValue === true ? 'Outdoor Activity' : 'Indoor Actvity';
-        setNewOutdoor(isOutdoor)
+      const handleOutdoor = (e, {value} ) => {
+        setNewOutdoor(value);
       };
 
       const outdoorOptions = [
         { key: 'I', text: 'Indoor Activity', value: 'Indoor Activity' },
         { key: 'O', text: 'Outdoor Activity', value: 'Outdoor Activity' }
-      ]
+      ];
 
-      const handleFree = (e) => {
-        const selectedValue = e.target.value;
-        const isFree = selectedValue === true ? 'Free Activity' : 'Actvity price will vary'
-        setNewFree(isFree);
+      const handleFree = (e, {value} ) => {
+        setNewFree(value);
       }
 
       const priceOptions = [
@@ -90,7 +88,7 @@ function ActivityForm({onNewActivity}){
             setNewFree(false)
         }) 
       }
-
+  
     return(
         <div>
       <h3>Add an Activity!</h3>
