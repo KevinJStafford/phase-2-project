@@ -4,10 +4,10 @@ import FilterToggle from "./FilterToggle";
 function Navbar({handleSearchChange}) {
 
     return (
-        <div class="ui grid container">
-        <div class="ui four column grid container" className="nav-area">
-            <Searchbar class="column" className="column" handleSearchChange={handleSearchChange} />
-            <FilterToggle class="column" />
+        <div class="ui four column grid container">
+        <div class="column">
+            <Searchbar handleSearchChange={handleSearchChange} />
+            <FilterToggle />
             <button>Activities</button>
             <button>Randomizer</button>
             <button>Add Activity!</button>
