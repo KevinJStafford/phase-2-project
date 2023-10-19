@@ -17,7 +17,7 @@ const routes = [
     element: <App />,
     errorElement: <div>Error in app. Whoops!</div>,
     children: [
-      {index: true, element: <DefaultChild />},
+      {element: <DefaultChild />},
       {path: '/activities',
        element: <Activities />,
       },

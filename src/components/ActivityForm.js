@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { Form } from "semantic-ui-react";
+import { Header, Grid, Form } from "semantic-ui-react";
 import {useOutletContext, useNavigate} from 'react-router-dom'
 
 function ActivityForm(){
@@ -93,80 +93,85 @@ function ActivityForm(){
       }
   
     return(
+    <Grid centered>
+      <Grid.Column width={4}>
         <div>
-      <h3>Add an Activity!</h3>
-      <Form
-        onSubmit={handleSubmit}>
+        <Header as='h3' textAlign='center'>
+      Add New Activity!
+    </Header>
+          <Form
+              onSubmit={handleSubmit}>
 
-        <Form.Field>
-          <Form.Input 
-          fluid 
-          label="Name" 
-          placeholder="name" 
-          name="name" 
-          value={newName} 
-          onChange={handleName} 
-          width = {4}/>
+              <Form.Field>
+                <Form.Input 
+                fluid 
+                label="Name" 
+                placeholder="name" 
+                name="name" 
+                value={newName} 
+                onChange={handleName} 
+                />
 
-          <Form.Input 
-          fluid 
-          label="image" 
-          placeholder="image URL" 
-          name="image" 
-          value={newImage} 
-          onChange={handleImage} 
-          width = {4}/>
+                <Form.Input 
+                fluid 
+                label="image" 
+                placeholder="image URL" 
+                name="image" 
+                value={newImage} 
+                onChange={handleImage} 
+                />
 
-          <Form.Input 
-          fluid 
-          label="description" 
-          placeholder="description" 
-          name="description" 
-          value={newDescription} 
-          onChange={handleDescription} 
-          width = {4}/>
+                <Form.Input 
+                fluid 
+                label="description" 
+                placeholder="description" 
+                name="description" 
+                value={newDescription} 
+                onChange={handleDescription} 
+                />
 
-        </Form.Field>
+              </Form.Field>
 
-        <Form.Group>
-          <Form.Select 
-          fluid 
-          label="age range" 
-          placeholder="recommended age range" 
-          name="age range" 
-          options={ageOptions}
-          value={newAgeRange} 
-          onChange={handleAgeRange} 
-          width = {4}/>
-        </Form.Group> 
+              <Form.Group>
+                <Form.Select 
+                fluid 
+                label="age range" 
+                placeholder="recommended age range" 
+                name="age range" 
+                options={ageOptions}
+                value={newAgeRange} 
+                onChange={handleAgeRange} 
+                width = {16}/>
+              </Form.Group> 
 
-        <Form.Group>
-          <Form.Select 
-          fluid 
-          label="location" 
-          placeholder="location" 
-          name="location" 
-          options={outdoorOptions}
-          value={newOutdoor} 
-          onChange={handleOutdoor} 
-          width = {4}/>
-       </Form.Group>
+              <Form.Group>
+                <Form.Select 
+                fluid 
+                label="location" 
+                placeholder="location" 
+                name="location" 
+                options={outdoorOptions}
+                value={newOutdoor} 
+                onChange={handleOutdoor} 
+                width = {16}/>
+              </Form.Group>
 
-       <Form.Group >
-          <Form.Select 
-          fluid 
-          label="price" 
-          placeholder="price" 
-          name="price" 
-          options={priceOptions}
-          value={newFree} 
-          onChange={handleFree} 
-          width = {4}/>
-      </Form.Group> 
-
-        <Form.Button >Submit</Form.Button>
-      </Form>
-    </div>
+              <Form.Group >
+                <Form.Select 
+                fluid 
+                label="price" 
+                placeholder="price" 
+                name="price" 
+                options={priceOptions}
+                value={newFree} 
+                onChange={handleFree} 
+                width = {16}/>
+              </Form.Group> 
+              <Form.Button >Submit</Form.Button>
+          </Form>
+      </div>
+    </Grid.Column>
+  </Grid>
     );
 }
 
