@@ -4,8 +4,8 @@ function DefaultChild() {
     return (
         <Grid>
           <Grid.Column textAlign="center">
-            <div>
-              <h1>Welcome to Family Fun Helper!</h1>
+            <div className="childtitle">
+              <h1 className="sitetitle">Welcome to Family Fun Helper!</h1>
             </div>
           </Grid.Column>
         </Grid>

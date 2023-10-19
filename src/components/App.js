@@ -58,7 +58,7 @@ function App() {
 
 
   return (
-    <div style={{backgroundImage: "url(./nbclouds.png)"}} className="main">
+    <div  className="main" style={{backgroundImage: "url(./nbclouds.png)"}}>
       <Navbar handleSearchChange={handleSearchChange} toggleCost={toggleCost} />
       <Outlet context={context} />
     </div>

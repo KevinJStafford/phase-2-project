@@ -104,7 +104,7 @@ function ActivityForm(){
               <Form.Field>
                 <Form.Input 
                 fluid 
-                label="Name" 
+                label="name" 
                 placeholder="name" 
                 name="name" 
                 value={newName} 

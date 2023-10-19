@@ -132,23 +132,27 @@ code {
   webkit-background-clip: text;
   color: transparent;
 }
-/* .background-container{
-  width:100%;
-  height: 400px;
-  background-image: url('./background.svg');
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position: center 70%;
-  border: 1px solid black;
-} */
+
 svg {
   position: relative;
   width: 100%;
   height: 100%;
   border: none;
   object-fit: cover;
-  z-index: 1;
+  z-index: 0;
 }
-.main {
-  height: auto;
+.childtitle{
+  height: 50rem;
+}
+
+.sitetitle{
+  font:inherit;
+  color: #696969;
+  font-size: 5em;
+  width: auto;
+  -webkit-text-stroke: 2px #696969;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-top: 13.5rem;
 }
