@@ -102,3 +102,8 @@ code {
     width: 50%;
   }
 }
+
+.defaultGreeting {
+  text-align: center;
+  font-size: 5rem;
+}
