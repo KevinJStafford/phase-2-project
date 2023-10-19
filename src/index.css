@@ -153,3 +153,6 @@ svg {
 /* body{
   background-image: url('nbclouds.png');
 } */
+.main {
+  height: auto;
+}
