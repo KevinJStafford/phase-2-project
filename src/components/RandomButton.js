@@ -8,26 +8,27 @@ function RandomButton() {
     const [randomActivity, setRandomActivity] = useState([])
     const [isClicked, setIsClicked] = useState(false)
     
+
+
     function handleClick(e) {
-        setRandomActivity(getRandomActivity())
-        console.log(e)
+      setRandomActivity(getRandomActivity())
     }
 
     const toggleActivity = () => {
-        setIsClicked(true)
+      setIsClicked(true)
     }
-    console.log(isClicked)
+    
 
         
         
     return (
-        <Grid centered>
-          <Grid.Column textAlign="center">
-            <div className="centered">
-              {isClicked ? (
-              <div div className="card-container">
+      <Grid centered>
+        <Grid.Column textAlign="center">
+          <div className="centered">
+            {isClicked ? (
+            <div div className="card-container">
               <RandomActivityCard randomActivity={randomActivity} />
-              </div>
+            </div>
               ) : null}
             </div>
             <div>
