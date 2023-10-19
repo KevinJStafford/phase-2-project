@@ -1,41 +1,38 @@
 import Searchbar from "./Searchbar";
 import FilterToggle from "./FilterToggle";
-import {Grid, Segment} from 'semantic-ui-react';
+import {Grid, Header, Segment} from 'semantic-ui-react';
+import {NavLink} from "react-router-dom"
 
 function Navbar({handleSearchChange}) {
 
     return (
-        <div class="ui equal width grid">
-          <div class="eight wide column">
-            <div class="ui segment"><Searchbar handleSearchChange={handleSearchChange} />
-            </div>
-        </div>
-        <div class="column">
-            <div class="ui segment"><FilterToggle />
-            </div>
-            </div>
-            <div class="column">
-                <div class="ui segment"><button>Activities</button><button>Randomizer</button><button>Add Activity!</button>
+    <Segment>
+        <Header as='h3' textAlign='right'>
+            <nav class="ui equal width grid" >
+                <NavLink
+                to= "root/activities"
+                className= "Nav-Link"
+                > Activities </NavLink>
+                <NavLink
+                to="/activities/form"
+                className= "Nav-Link"
+                > New Activity </NavLink>
+                <NavLink 
+                to='/activites/random'
+                className="Nav-Link"
+                >Random</NavLink>
+                <div class="ui segment">
+                    <Searchbar handleSearchChange={handleSearchChange} />
                 </div>
+                <div class="column">
+                    <div class="ui segment">
+                        <FilterToggle />
+                    </div>    
                 </div>
-                </div>
+            </nav>
+        </Header>
+    </Segment>
     )
 }
 
-export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export default Navbar;
+export default Navbar;        

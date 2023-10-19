@@ -11,7 +11,7 @@ import RandomButton from './components/RandomButton';
 import Activities from './components/Activities';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
-const routes = [
+const router = createBrowserRouter ([
   {
     path: '/',
     element: <App />,
@@ -22,7 +22,7 @@ const routes = [
        element: <Activities />,
       },
       {
-        path: '/activities/from',
+        path: '/activities/form',
         element: <ActivityForm />,
       },
       {
@@ -31,17 +31,18 @@ const routes = [
       },
     ],
   },
-];
+]);
 
-const router = createBrowserRouter(routes);
+// const router = createBrowserRouter(routes);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  //   <BrowserRouter>
+  //   <App />
+  //   </BrowserRouter>
+  // </React.StrictMode>
+  <RouterProvider router = {router}/>
 );
 
 // If you want to start measuring performance in your app, pass a function
