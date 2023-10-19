@@ -132,3 +132,20 @@ code {
   webkit-background-clip: text;
   color: transparent;
 }
+/* .background-container{
+  width:100%;
+  height: 400px;
+  background-image: url('./background.svg');
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center 70%;
+  border: 1px solid black;
+} */
+svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+  z-index: 1;
+}
