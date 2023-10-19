@@ -103,7 +103,32 @@ code {
   }
 }
 
-.defaultGreeting {
-  text-align: center;
-  font-size: 5rem;
+.buttonStyle {
+  padding: 20px 60px;
+  border: none;
+  outline: none;
+  position: relative;
+  border-radius: 5px;
+  background: linear-gradient(to right, #fafa6e, #08edfb);
+  cursor: pointer;
+  z-index: 1;
+}
+.buttonStyle::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  background-color: white;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.buttonStyle::after {
+  content: attr(data);
+  font-size: 16px;
+  background: linear-gradient(to left, #fafa6e, #08edfb);
+  webkit-background-clip: text;
+  color: transparent;
 }

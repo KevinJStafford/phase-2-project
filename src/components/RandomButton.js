@@ -1,16 +1,16 @@
 import React, {useState} from "react"
 import { getRandomActivity } from "./data/randomActivity";
 import RandomActivityCard from "./RandomActivityCard";
-import { Grid } from 'semantic-ui-react';
+import {Grid} from 'semantic-ui-react';
 
 
 function RandomButton() {
     const [randomActivity, setRandomActivity] = useState([])
     const [isClicked, setIsClicked] = useState(false)
     
-    function handleClick() {
+    function handleClick(e) {
         setRandomActivity(getRandomActivity())
-        
+        console.log(e)
     }
 
     const toggleActivity = () => {
@@ -23,20 +23,23 @@ function RandomButton() {
     return (
         <Grid centered>
           <Grid.Column textAlign="center">
-            <div onClick={toggleActivity} className="centered">
+            <div className="centered">
               {isClicked ? (
-                <div div className="card-container">
-                  <RandomActivityCard randomActivity={randomActivity} />
-                </div>
+              <div div className="card-container">
+              <RandomActivityCard randomActivity={randomActivity} />
+              </div>
               ) : null}
-              <button onClick={handleClick} id="random-activity">
-                Can't Decide? Click to get a random activity
+            </div>
+            <div>
+              <button onClick={handleClick} class="ui basic button" className="buttonStyle">
+                <div onClick={toggleActivity} >Can't Decide?</div>
+                <div>Let The AI Choose!</div>
               </button>
             </div>
+
           </Grid.Column>
         </Grid>
       );
-}
-
-
-export default RandomButton;
+    }
+  
+    export default RandomButton;
