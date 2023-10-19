@@ -33,7 +33,7 @@ function RandomButton() {
             <div>
               <button onClick={handleClick} class="ui basic button" className="buttonStyle">
                 <div onClick={toggleActivity} >Can't Decide?</div>
-                <div>Let The AI Choose!</div>
+                <div onClick={toggleActivity} >Let The AI Choose!</div>
               </button>
             </div>
 
