@@ -1,5 +1,4 @@
 import '../App.css';
-import DefaultChild from './DefaultChild';
 import Navbar from './Navbar';
 import {useEffect,useState} from 'react';
 import {Outlet} from 'react-router-dom';
