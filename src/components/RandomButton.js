@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import { getRandomActivity } from "./data/randomActivity";
 import RandomActivityCard from "./RandomActivityCard";
-import { Grid, Button } from 'semantic-ui-react';
+import {Grid} from 'semantic-ui-react';
 
 
 function RandomButton() {
