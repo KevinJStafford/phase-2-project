@@ -25,7 +25,7 @@ function RandomButton() {
           <Grid.Column textAlign="center">
             <div onClick={toggleActivity} className="centered">
               {isClicked ? (
-                <div>
+                <div div className="card-container">
                   <RandomActivityCard randomActivity={randomActivity} />
                 </div>
               ) : null}
