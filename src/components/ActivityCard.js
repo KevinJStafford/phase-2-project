@@ -7,7 +7,6 @@ function ActivityCard({oneActivity}) {
   
   const baseLocation = outdoor === true ? 'Outdoor Activity' : 'Indoor Actvity';
   const Fee = free === true ? 'Free Activity' : 'Actvity price will vary'
-//   const details = (ageRange,baseLocation)
   
   
   const toggleDetails = ()=>{
