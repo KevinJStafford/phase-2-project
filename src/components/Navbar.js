@@ -3,12 +3,12 @@ import FilterToggle from "./FilterToggle";
 import { Grid, Menu, Segment} from 'semantic-ui-react';
 import {NavLink} from "react-router-dom"
 
-function Navbar({ handleSearchChange }) {
+function Navbar({ handleSearchChange, toggleCost }) {
   return (
     <Segment>
       <Grid columns={3}>
         <Grid.Column width={4}>
-          <FilterToggle />
+          <FilterToggle toggleCost={toggleCost} />
         </Grid.Column>
         <Grid.Column width={8} textAlign="center">
           <Searchbar handleSearchChange={handleSearchChange} />

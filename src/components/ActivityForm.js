@@ -1,6 +1,6 @@
 import {useState} from "react";
 import { Header, Grid, Form } from "semantic-ui-react";
-import {useOutletContext, useNavigate} from 'react-router-dom'
+import {useOutletContext} from 'react-router-dom'
 
 function ActivityForm(){
     const {onNewActivity} = useOutletContext()
@@ -10,7 +10,6 @@ function ActivityForm(){
     const [ newAgeRange , setNewAgeRange ] = useState('')
     const [ newOutdoor , setNewOutdoor ] = useState('')
     const [ newFree , setNewFree ] = useState('')
-    const navigate = useNavigate()
 
     const handleName = (e) => {
         setNewName(e.target.value);

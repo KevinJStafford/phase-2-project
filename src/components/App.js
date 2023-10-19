@@ -1,9 +1,5 @@
 import '../App.css';
 import Navbar from './Navbar';
-import ActivityForm from './ActivityForm';
-import Activities from './Activities';
-import RandomButton from './RandomButton';
-import DefaultChild from './DefaultChild';
 import {useEffect,useState} from 'react';
 import {Outlet} from 'react-router-dom';
 const API = 'https://family-fun-helper.onrender.com/activities'
@@ -11,6 +7,7 @@ const API = 'https://family-fun-helper.onrender.com/activities'
 function App() {
   const [ KidActivityData, setKidActivityData ] = useState([])
   const [search, setSearch] = useState('')
+  const [costFilter, setCostFilter] = useState(false)
  
 
   useEffect(()=> {
@@ -21,30 +18,48 @@ function App() {
       });
   }, []);
 
+  
+  const toggleCost = (e, {value}) => {
+    setCostFilter(value)
+  }
+
+  const filteredActivities = KidActivityData.filter((activity) => {
+    if (activity.free == true) {
+      return true
+    } else {
+      return false
+    }
+  })
+
+  
   const handleSearchChange = (e) => {
     setSearch(e.target.value)
   }
-
+  
   const filteredKidActivityData = KidActivityData.filter((activity) => {
     const lowerCaseActivityName = activity.name.toLowerCase()
     const lowerCaseActivityDescription = activity.description.toLowerCase()
     const lowerCaseSearch = search.toLowerCase()
-
-    return lowerCaseActivityName.includes(lowerCaseSearch) || lowerCaseActivityDescription.includes(lowerCaseSearch);
-  })
-
+    
+    return lowerCaseActivityName.includes(lowerCaseSearch) || lowerCaseActivityDescription.includes(lowerCaseSearch)}
+    )
+    const theActivitiesToPassDown = costFilter ? filteredActivities : filteredKidActivityData;
+    
+    const sortedActivities = [...theActivitiesToPassDown]
+    
   function onNewActivity(newActivity){
     setKidActivityData((currentActivities)=>[...currentActivities,newActivity])
   }
 
   const context = {
     onNewActivity,
-    activities: filteredKidActivityData,
+    activities: sortedActivities,
   }
+
 
   return (
     <div>
-      <Navbar handleSearchChange={handleSearchChange}/>
+      <Navbar handleSearchChange={handleSearchChange} toggleCost={toggleCost} />
       <Outlet context={context} />
     </div>
   );
