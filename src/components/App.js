@@ -24,7 +24,7 @@ function App() {
   }
 
   const filteredActivities = KidActivityData.filter((activity) => {
-    if (activity.free == true) {
+    if (activity.free === true) {
       return true
     } else {
       return false
