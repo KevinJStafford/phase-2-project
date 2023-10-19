@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import { getRandomActivity } from "./data/randomActivity";
 import RandomActivityCard from "./RandomActivityCard";
-
+import { Grid } from 'semantic-ui-react';
 
 
 function RandomButton() {
@@ -20,13 +20,22 @@ function RandomButton() {
 
         
         
-        return (
-        <div onClick={toggleActivity} className="centered">
-                {isClicked ? <div><RandomActivityCard randomActivity={randomActivity} /></div> : null }
-    
-            <button onClick={handleClick} id="random-activity">Can't Decide? Click to get a random activity</button>
-        </div>
-    )
+    return (
+        <Grid centered>
+          <Grid.Column textAlign="center">
+            <div onClick={toggleActivity} className="centered">
+              {isClicked ? (
+                <div>
+                  <RandomActivityCard randomActivity={randomActivity} />
+                </div>
+              ) : null}
+              <button onClick={handleClick} id="random-activity">
+                Can't Decide? Click to get a random activity
+              </button>
+            </div>
+          </Grid.Column>
+        </Grid>
+      );
 }
 
 

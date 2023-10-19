@@ -1,38 +1,45 @@
 import Searchbar from "./Searchbar";
 import FilterToggle from "./FilterToggle";
-import {Grid, Header, Segment} from 'semantic-ui-react';
+import { Grid, Menu, Segment} from 'semantic-ui-react';
 import {NavLink} from "react-router-dom"
 
-function Navbar({handleSearchChange}) {
-
-    return (
+function Navbar({ handleSearchChange }) {
+  return (
     <Segment>
-        <Header as='h3' textAlign='right'>
-            <nav class="ui equal width grid" >
-                <NavLink
-                to= "root/activities"
-                className= "Nav-Link"
-                > Activities </NavLink>
-                <NavLink
-                to="/activities/form"
-                className= "Nav-Link"
-                > New Activity </NavLink>
-                <NavLink 
-                to='/activites/random'
-                className="Nav-Link"
-                >Random</NavLink>
-                <div class="ui segment">
-                    <Searchbar handleSearchChange={handleSearchChange} />
-                </div>
-                <div class="column">
-                    <div class="ui segment">
-                        <FilterToggle />
-                    </div>    
-                </div>
-            </nav>
-        </Header>
+      <Grid columns={3}>
+        <Grid.Column width={4}>
+          <FilterToggle />
+        </Grid.Column>
+        <Grid.Column width={8} textAlign="center">
+          <Searchbar handleSearchChange={handleSearchChange} />
+        </Grid.Column>
+        <Grid.Column width={4} textAlign="right">
+          <Menu secondary>
+            <Menu.Item position="right">
+              <NavLink to="/" className="Nav-Link">
+                Home
+              </NavLink>
+            </Menu.Item>
+            <Menu.Item position="right">
+              <NavLink to="/activities" className="Nav-Link">
+                Activities
+              </NavLink>
+            </Menu.Item>
+            <Menu.Item position="right">
+              <NavLink to="/activities/form" className="Nav-Link">
+                New Activity
+              </NavLink>
+            </Menu.Item>
+            <Menu.Item position="right">
+              <NavLink to="/activities/random" className="Nav-Link">
+                Random
+              </NavLink>
+            </Menu.Item>
+          </Menu>
+        </Grid.Column>
+      </Grid>
     </Segment>
-    )
+  );
 }
 
-export default Navbar;        
+export default Navbar;

@@ -17,7 +17,7 @@ const router = createBrowserRouter ([
     element: <App />,
     errorElement: <div>Error in app. Whoops!</div>,
     children: [
-      {index: true, element: <DefaultChild />},
+      {element: <DefaultChild />},
       {path: '/activities',
        element: <Activities />,
       },
@@ -26,22 +26,15 @@ const router = createBrowserRouter ([
         element: <ActivityForm />,
       },
       {
-        path: '/activites/random',
+        path: '/activities/random',
         element: <RandomButton />,
       },
     ],
   },
 ]);
 
-// const router = createBrowserRouter(routes);
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  //   <BrowserRouter>
-  //   <App />
-  //   </BrowserRouter>
-  // </React.StrictMode>
   <RouterProvider router = {router}/>
 );
 
