@@ -8,9 +8,13 @@ function Navbar({handleSearchChange}) {
     return (
     <Segment>
         <Header as='h3' textAlign='right'>
-            <nav class="ui equal width grid" >
+            <nav class="ui equal width grid container" >
+            <NavLink
+                to= "/"
+                className= "Nav-Link"
+                > Home </NavLink>
                 <NavLink
-                to= "root/activities"
+                to= "/activities"
                 className= "Nav-Link"
                 > Activities </NavLink>
                 <NavLink
@@ -18,7 +22,7 @@ function Navbar({handleSearchChange}) {
                 className= "Nav-Link"
                 > New Activity </NavLink>
                 <NavLink 
-                to='/activites/random'
+                to='/activities/random'
                 className="Nav-Link"
                 >Random</NavLink>
                 <div class="ui segment">

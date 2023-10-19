@@ -1,4 +1,3 @@
-// import logo from '../logo.svg';
 import '../App.css';
 import Navbar from './Navbar';
 import ActivityForm from './ActivityForm';
@@ -7,6 +6,7 @@ import RandomButton from './RandomButton';
 import DefaultChild from './DefaultChild';
 import {useEffect,useState} from 'react';
 import {Outlet} from 'react-router-dom';
+const API = 'https://family-fun-helper.onrender.com/activities'
 
 function App() {
   const [ KidActivityData, setKidActivityData ] = useState([])
@@ -14,7 +14,7 @@ function App() {
  
 
   useEffect(()=> {
-    fetch('http://localhost:8000/activities')
+    fetch(API)
       .then((r)=> r.json())
       .then((kidActivitiesArray)=> {
         setKidActivityData(kidActivitiesArray)
@@ -45,10 +45,6 @@ function App() {
   return (
     <div>
       <Navbar handleSearchChange={handleSearchChange}/>
-      <DefaultChild />
-      {/* <ActivityForm onNewActivity = {onNewActivity} />
-      <Activities activities = {filteredKidActivityData} />
-      <RandomButton  /> */}
       <Outlet context={context} />
     </div>
   );
