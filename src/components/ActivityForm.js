@@ -1,6 +1,7 @@
 import {useState} from "react";
 import { Header, Grid, Form } from "semantic-ui-react";
 import {useOutletContext} from 'react-router-dom'
+const API = 'https://family-fun-helper.onrender.com/activities'
 
 function ActivityForm(){
     const {onNewActivity} = useOutletContext()
@@ -66,7 +67,7 @@ function ActivityForm(){
           free : newFree
       };
 
-    fetch('http://localhost:8000/activities', {
+    fetch(API, {
       method : "POST",
       headers : {
             "Content-Type" : "application/json"
