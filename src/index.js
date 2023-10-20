@@ -22,7 +22,6 @@ const routes = [
       },
       {
         path: '/activities/form',
-        
         element: <ActivityForm />,
       },
       {
