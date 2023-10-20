@@ -1,2 +1,2 @@
-# Redirect with a 200
-/activities    /activities   200
+
+/*    /index.html   200
